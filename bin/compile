@@ -40,5 +40,8 @@ export GOPATH
 unset GIT_DIR # unset git dir or it will mess with goinstall
 echo "-----> Running go install"
 for f in $(find src -type f | egrep "\.go$" | sort | uniq)
-do go install $(dirname $f)
+do
+    d=$(dirname $f);
+    echo "go install $(basename $d)";
+    go install $(basename $d);
 done
