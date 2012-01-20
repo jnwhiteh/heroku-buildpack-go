@@ -29,9 +29,6 @@ echo "-----> Using Go $ver"
     rm -f go-$ver.tar.gz
 )
 
-echo "Build is $build"
-echo "Cache is $cache"
-
 GOROOT=$cache/go-$ver/go
 export GOROOT
 PATH=$GOROOT/bin:$PATH
@@ -39,6 +36,14 @@ PATH=$GOROOT/bin:$PATH
 cd $build
 
 GOPATH=`pwd`
+
+echo "Build is $build"
+echo "Cache is $cache"
+echo "GOROOT is $GOROOT"
+echo "PATH is $PATH"
+echo "GOPATH is $GOPATH"
+echo `find .`
+
 export GOPATH
 unset GIT_DIR # unset git dir or it will mess with goinstall
 echo "-----> Running go install"
