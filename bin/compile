@@ -29,6 +29,9 @@ echo "-----> Using Go $ver"
     rm -f go-$ver.tar.gz
 )
 
+echo "Build is $build"
+echo "Cache is $cache"
+
 GOROOT=$cache/go-$ver/go
 export GOROOT
 PATH=$GOROOT/bin:$PATH
